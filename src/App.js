@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import './App.css'
+
 
 export default class App extends Component {
   constructor(props){
@@ -24,14 +26,38 @@ export default class App extends Component {
   
 
   // Your code here!
+  
+  let vowelIndex = currentWord.match(/[aeiou]/i) || 0;
+  let vowel = currentWord.indexOf(vowelIndex[0])
+  let yChar = currentWord.match(/['y']/)
 
-  let vowelIndex = currentWord.search(/[aeiou]/i)
-  let yIndex = currentWord.search(/[y]/i)
-  let quIndex = currentWord.indexOf("qu")
-  let testString = "squid"
-  console.log("here", testString.toLowerCase().indexOf("qu") );
+ //search to see if the first letter of the current word is a vowel, if so, return the word + "way"
+    if(vowel === 0){
+      return currentWord + "way"
+    }
+ //search to see if the first index of the word is "q", if so return the word, up to the 2nd vowel (this removes the q + u), and return current 
+    else if (currentWord[0] === 'q' || currentWord[0] === 'q' && currentWord[1] === 'u') {
+      return currentWord.substring(vowel ) + currentWord.substring(0, vowel ) + 'ay'
+    }
+    //search to see if the second letter of the current word is q, if so, return the current word up to the vowel + 1, and append const1 (usually s), q, and the next vowel
+    else if (currentWord[1] === 'q') {
+      return currentWord.substring(vowel + 1) + currentWord.substring(0, vowel + 1) + 'ay'
+    }
+// search to see if the first letter of the current word is y
+        //if so, return the substring up to the first vowel after y, and append to the end of the sliced currentWord the characters up to the yChar
+        else if (currentWord[0] !== 'y' && currentWord[1] === 'y'){
+          console.log("here", yChar);
+            return currentWord.substring(yChar) + currentWord.substring(0, yChar) + 'ay'
+        }
 
-    return currentWord
+    else if (currentWord[0] === 'y'){
+      return currentWord.substring(vowel) + currentWord.substring(0, vowel) + 'ay'
+
+    
+  }
+
+    else { return currentWord.substring(vowel) + currentWord.substring(0, vowel) + 'ay'}
+
 })
 
   let translatedWords = translatedWordsArray.join(" ")
@@ -51,6 +77,11 @@ export default class App extends Component {
   setUpPreventDefault = (e) => {
     e.preventDefault()
     this.myPigLatinCodeHere()
+  }
+
+  handleInput = (e) => {
+    // this method takes the input and saves the value in the this.state.phrase so we can use the input in our program
+    this.setState({ phrase: e.target.value})
   }
 
   render() {
