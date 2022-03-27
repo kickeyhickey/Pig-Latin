@@ -37,7 +37,7 @@ export default class App extends Component {
       }
       //search to see if the first index of the word is "q", if so return the word, up to the 2nd vowel (this removes the q + u), and return current 
       else if (currentWord[0] === 'q' || currentWord[0] === 'q' && currentWord[1] === 'u') {
-        return currentWord.substring(vowel) + currentWord.substring(0, vowel) + 'ay'
+        return currentWord.substring(vowel + 1) + currentWord.substring(0, vowel + 1) + 'ay'
       }
       //search to see if the second letter of the current word is q, if so, return the current word up to the vowel + 1, and append const1 (usually s), q, and the next vowel
       else if (currentWord[1] === 'q') {
