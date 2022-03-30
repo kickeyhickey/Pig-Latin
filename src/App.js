@@ -86,6 +86,7 @@ export default class App extends Component {
     return (
       <>
         <h1>Pig Latin Translator</h1>
+        <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL1BpZy1sYXRpbi1uZXcuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9LCJ0b0Zvcm1hdCI6ImF2aWYifX0=" />
         <div className="inputArea">
           <h4> Enter phrase to be translated:</h4>
           <input
