@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "homepage": "https://kickeyhickey.github.io/pig-latin-translator",
-=======
-   "homepage": "https://kickeyhickey.github.io/pig-latin-translator/",
->>>>>>> 2c2f002add61bc19b10b996c14f0a4392347250e
+  "homepage": "https://kickeyhickey.github.io/pig-latin-translator/",
   "name": "pig-latin",
   "version": "0.1.0",
   "private": true,
